@@ -9,17 +9,19 @@ def age_calculator():
     age_months = None
     age_days = None
 
+    current_year = datetime.now().year
+
     if request.method == 'POST':
         try:
             year = int(request.form['year'])
             month = int(request.form['month'])
             day = int(request.form['day'])
-        
+
             birthdate = datetime(year, month, day)
             today = datetime.now()
-            
+
             age_years = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
-            
+
             birthdate_anniversary = datetime(today.year, month, day)
             if today >= birthdate_anniversary:
                 age_months = today.month - birthdate_anniversary.month
@@ -29,11 +31,11 @@ def age_calculator():
                 age_days = (today.day - birthdate_anniversary.day + 30) % 30
 
         except ValueError:
-            error_message = "Invalid date inputs. Please enter valid numerical values for year, month and day."
+            error_message = "Invalid input. Please enter valid numerical values for year, month and day."
 
-            return render_template('home.html', error_message=error_message)
+            return render_template('home.html', error_message=error_message, current_year=current_year)
 
-    return render_template('home.html', age_years=age_years, age_months=age_months, age_days=age_days)
+    return render_template('home.html', age_years=age_years, age_months=age_months, age_days=age_days, current_year=current_year)
 
 if __name__ == '__main__':
     app.run(debug=True)
