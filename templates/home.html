@@ -119,13 +119,14 @@
 
         <section>
             {% if age_years is not none %}
-                <p class="mt-3">Your age is {{ age_years }} years, {{ age_months }} months and {{ age_days }} days old.</p>
+                <p class="mt-3"> Hello {{ session['username'] }}, Your age is {{ age_years }} years, {{ age_months }} months and {{ age_days }} days old.</p>
             {% endif %}
 
             {% if error_message %}
                 <p style="color: red;">{{ error_message }}</p>
             {% endif %}
         </section>
+        <p align="center"><a href="{{ url_for('index') }}"> Back to the index page</a> </p>
     
         <footer>
             <p>&copy;2024 Dev_aladinh production.</p>
