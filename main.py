@@ -1,9 +1,19 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = 'aladinh-montext'  
 
 @app.route('/', methods=['GET', 'POST'])
+def index():    
+    if request.method == 'POST':
+        username = request.form['username']
+        session['username'] = username
+        return redirect(url_for('age_calculator'))
+    
+    return render_template('index.html')
+
+@app.route('/age_calculator', methods=['GET', 'POST'])
 def age_calculator():
     age_years = None
     age_months = None
@@ -31,7 +41,7 @@ def age_calculator():
                 age_days = (today.day - birthdate_anniversary.day + 30) % 30
 
         except ValueError:
-            error_message = "Invalid input. Please enter valid numerical values for year, month and day."
+            error_message = " EEROR!!, Invalid input. Please enter valid numerical values for year, month and day."
 
             return render_template('home.html', error_message=error_message, current_year=current_year)
 
