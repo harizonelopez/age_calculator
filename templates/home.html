@@ -83,14 +83,13 @@
                 <div class="form-group">
                     <div class="col-md-4 mb-3">
                         <label for="year" class="form-label">Year(YYYY): </label>
-                        <select 
-                            class="form-select" required
+                        <input 
+                            type="text"
+                            class="form-control" 
                             id="year" 
-                            name="year">
-                            {% for y in range(current_year, 1900, -1) %}
-                                <option value="{{ y }}"> {{ y }} </option>
-                            {% endfor %}
-                        </select> 
+                            name="year" required
+                            placeholder="Enter the year here...?">
+                        </input> 
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="month" class="form-label">Month (MM): </label>
