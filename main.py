@@ -4,7 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = 'aladinh-montext'  
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():    
     if request.method == 'POST':
         username = request.form['username']
@@ -13,7 +13,7 @@ def index():
     
     return render_template('index.html')
 
-@app.route('/age_calculator', methods=['POST'])
+@app.route('/age_calculator', methods=['GET', 'POST'])
 def age_calculator():
     age_years = None
     age_months = None
