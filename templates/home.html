@@ -73,12 +73,13 @@
 
 <body>
     <section>
+        
         <h1 align="center">Age Calculator</h1>
         <section>
-            <h3>Enter the detaills <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+            <h3>Enter the detaills below <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
-              </svg> </h3>
+                </svg></h3>
             <form method="POST">
                 <div class="form-group">
                     <div class="col-md-4 mb-3">
@@ -89,7 +90,7 @@
                             id="year" 
                             name="year" required
                             placeholder="Enter the year here...?">
-                        </input> 
+                        </input>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="month" class="form-label">Month (MM): </label>
@@ -99,6 +100,7 @@
                             id="month" 
                             name="month" required
                             placeholder="Enter the month here...?">
+                        </input>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="day" class="form-label">Day (DD): </label>
@@ -108,12 +110,13 @@
                             id="day" 
                             name="day" required
                             placeholder="Enter the day here...?">
+                        </input>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary" >Calculate Age <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+                <button type="submit" class="btn btn-primary" >Calculate Age<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
                     <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5m0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5M7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5m.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5z"/>
-                  </svg> </button>
+                    </svg></button>
             </form>
         </section>
 
@@ -121,12 +124,11 @@
             {% if age_years is not none %}
                 <p class="mt-3"> Hello {{ session['username'] }}, Your age is {{ age_years }} years, {{ age_months }} months and {{ age_days }} days old.</p>
             {% endif %}
-
             {% if error_message %}
                 <p style="color: red;">{{ error_message }}</p>
             {% endif %}
         </section>
-        <p align="center"><a href="{{ url_for('index') }}"> Back to the index page</a> </p>
+        <p align="center"><a href="{{ url_for('index') }}">Back to the Entry page</a></p>
     
         <footer>
             <p>&copy;2024 Dev_aladinh production.</p>
