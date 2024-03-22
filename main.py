@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'aladinh-montext'  
+app.secret_key = 'aladinh00-01montext'  
 
 @app.route('/', methods=['GET', 'POST'])
 def index():    
