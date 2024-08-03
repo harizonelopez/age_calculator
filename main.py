@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = 'aladinh00-01montext'  
+app.secret_key = 'aladinh00-010montext'  
 
 @app.route('/', methods=['GET', 'POST'])
 def index():    
@@ -26,12 +26,11 @@ def age_calculator():
             year = int(request.form['year'])
             month = int(request.form['month'])
             day = int(request.form['day'])
-
             birthdate = datetime(year, month, day)
             today = datetime.now()
 
             age_years = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
-
+            
             birthdate_anniversary = datetime(today.year, month, day)
             if today >= birthdate_anniversary:
                 age_months = today.month - birthdate_anniversary.month
@@ -40,8 +39,9 @@ def age_calculator():
                 age_months = (today.month - birthdate_anniversary.month - 1 + 12) % 12
                 age_days = (today.day - birthdate_anniversary.day + 30) % 30
 
-        except ValueError:
-            error_message = "EEROR!!!, Invalid input. Please enter valid numerical values for year, month and the day entries."
+        except Exception as e:
+            age_years, age_months, age_days = None, None, None
+            error_message = f"ERROR!! Invalid data. Please enter valid numerical values for year, month and day inputs. {str(e)}"
 
             return render_template('home.html', error_message=error_message, current_year=current_year)
 
