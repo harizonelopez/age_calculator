@@ -1,3 +1,37 @@
-This is basically an Age calculator app in which you enter your age by the date of birth, the month of your birthday and the your birthday year.
-The app will then calculate your age and gives you the feedback which is you exact age.
-You are feel to take the codes and use it to your need regarding that you are abidding by the copyright laws and the the Github laws and regulations.
+# Age Calculator Flask App
+
+This is a simple Flask web application that calculates the age of a user in years, months, and days based on their date of birth.
+
+## Features
+
+- User-friendly interface for entering date of birth.
+- Calculates age in years, months, and days.
+- Handles invalid inputs with error messages.
+
+## Requirements
+
+- Python 3.x
+- Flask
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/harizonelopez/age-calculator-flask-app.git
+   cd age-calculator-flask-app
+
+2. **Create a virtual environment:**
+
+  ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+  ```
+
+3. Run the Flask application:
+
+   ```bash
+   python app.py
+   ```
+
+4. Open your web browser and go to: `http://127.0.0.1:5000/`
