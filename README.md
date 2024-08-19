@@ -10,15 +10,15 @@ This is a simple Flask web application that calculates the age of a user in year
 
 ## Requirements
 
-- Python 3.x
-- Flask
+- Python 3.0 or later
+- Flask web framework
 
 ## Installation
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/harizonelopez/age-calculator-flask-app.git
+   git clone https://github.com/harizonelopez/age-calculator.git
    cd age-calculator-flask-app
 
 2. **Create a virtual environment:**
